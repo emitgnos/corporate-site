@@ -22,9 +22,6 @@ const Home: NextPage = () => {
     typography: 'headline5',
     color: '$text1',
     marginBottom: '24px',
-    '> a': {
-      color: '$primary4',
-    },
   })
   const Logo = styled('div', {
     width: '285px',
@@ -46,9 +43,7 @@ const Home: NextPage = () => {
         <Logo>
           <Icon title="Emitgnos Inc." />
         </Logo>
-        <HeadLine>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </HeadLine>
+        <HeadLine>Welcome to Emitgnos corporate site.</HeadLine>
         <Button type="button">Button 1</Button>
       </main>
     </div>
