@@ -7,6 +7,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   const Wrapper = styled('div', {
     backgroundColor: '$background9',
     color: '$text1',
+    minHeight: '100vh',
+    display: 'grid',
+    placeItems: 'center',
+    textAlign: 'center',
   })
   const isDarkMode = useMedia('(prefers-color-scheme: dark)')
 
