@@ -1,8 +1,19 @@
-import { globalStyles } from 'utils/stitches.config'
+import { useMedia } from 'use-media'
+import { globalStyles, theme, dark, styled } from 'utils/stitches.config'
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   globalStyles()
-  return <Component {...pageProps} />
+  const Wrapper = styled('div', {
+    backgroundColor: '$background9',
+    color: '$text1',
+  })
+  const isDarkMode = useMedia('(prefers-color-scheme: dark)')
+
+  return (
+    <Wrapper className={isDarkMode ? dark : theme}>
+      <Component {...pageProps} />
+    </Wrapper>
+  )
 }
-export default MyApp
+export default App

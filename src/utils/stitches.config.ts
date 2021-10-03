@@ -1,12 +1,21 @@
 import { createStitches, globalCss } from '@stitches/react'
 
+const rem = (px: number) => {
+  return `${px / 16}rem`
+}
+
 export const { styled, css, theme, createTheme, getCssText } = createStitches({
   theme: {
     fonts: {
       system: `Hiragino Sans, Hiragino Kaku Gothic ProN, Helvetica Neue, Arial,
       Roboto, 'Noto Sans JP', Meiryo, sans-serif`,
     },
-    fontSizes: {},
+    fontSizes: {
+      headline5: rem(21),
+      headline6: rem(18),
+      body2: rem(14),
+      caption: rem(12),
+    },
     colors: {
       text1: '#132F24',
       text4: '#61756D',
@@ -28,6 +37,28 @@ export const { styled, css, theme, createTheme, getCssText } = createStitches({
     lg: '(min-width: 1280px)',
     xl: '(min-width: 1920px)',
   },
+  utils: {
+    typography: (variant: 'body2' | 'headline5') => {
+      switch (variant) {
+        case 'headline5':
+          return {
+            fontSize: rem(21),
+            letterSpacing: '0em',
+            lineHeight: '150%',
+            fontWeight: 700,
+          }
+        case 'body2':
+          return {
+            fontSize: rem(14),
+            letterSpacing: '0.068em',
+            lineHeight: '136%',
+            fontWeight: 400,
+          }
+        default:
+          return {}
+      }
+    },
+  },
 })
 
 export const dark = createTheme({
@@ -42,7 +73,8 @@ export const dark = createTheme({
     background10: '#000000',
     primary3: 'transparent',
     primary4: '#09C882',
-    primary5: 'transparent',
+    primary5: '#0B895D',
+    border: 'rgba(255,255,255,0.11)',
   },
 })
 
@@ -56,8 +88,8 @@ export const globalStyles = globalCss({
     },
   },
   html: {
-    fontFamily: '$system',
-    color: '$text1',
+    fontFamily: theme.fonts.system,
+    color: theme.colors.text1,
   },
   button: {
     cursor: 'pointer',

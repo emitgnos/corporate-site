@@ -1,22 +1,29 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from 'styles/Home.module.css'
-import { styled, theme, dark } from 'utils/stitches.config'
+import { styled, theme } from 'utils/stitches.config'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   const Button = styled('button', {
-    backgroundColor: theme.colors.background9,
-    borderColor: theme.colors.border,
+    typography: 'body2',
+    backgroundColor: '$background1',
+    borderColor: '$border',
     borderWidth: '1px',
     borderRadius: '9999px',
-    color: theme.colors.text1,
+    color: '$primary5',
     cursor: 'pointer',
-    fontSize: '13px',
     padding: '10px 15px',
     '&::after': {
       content: '',
       display: 'inline',
+    },
+  })
+  const HeadLine = styled('h1', {
+    typography: 'headline5',
+    color: '$text1',
+    marginBottom: '24px',
+    '> a': {
+      color: '$primary4',
     },
   })
 
@@ -29,19 +36,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <HeadLine>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </HeadLine>
 
         {/* eslint-disable-next-line no-constant-condition */}
-        <Button type="button" className={false ? theme : dark}>
+        <Button type="button" className={theme.className}>
           Button 1
         </Button>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -73,19 +75,6 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
