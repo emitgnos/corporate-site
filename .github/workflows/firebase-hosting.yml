@@ -23,4 +23,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EMITGNOS_CORPORATE_SITE }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
