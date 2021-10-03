@@ -1,10 +1,25 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-// import { styled } from '@stitches/react'
+import styles from 'styles/Home.module.css'
+import { styled, theme, dark } from 'utils/stitches.config'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
+  const Button = styled('button', {
+    backgroundColor: theme.colors.background9,
+    borderColor: theme.colors.border,
+    borderWidth: '1px',
+    borderRadius: '9999px',
+    color: theme.colors.text1,
+    cursor: 'pointer',
+    fontSize: '13px',
+    padding: '10px 15px',
+    '&::after': {
+      content: '',
+      display: 'inline',
+    },
+  })
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +32,11 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        {/* eslint-disable-next-line no-constant-condition */}
+        <Button type="button" className={false ? theme : dark}>
+          Button 1
+        </Button>
 
         <p className={styles.description}>
           Get started by editing{' '}
