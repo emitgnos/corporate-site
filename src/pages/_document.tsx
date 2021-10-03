@@ -6,7 +6,7 @@ class AppDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          {/* <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> */}
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
