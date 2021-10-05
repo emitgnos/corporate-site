@@ -1,23 +1,22 @@
-import { useMedia } from 'use-media'
-import { globalStyles, theme, dark, styled } from 'utils/stitches.config'
+import { IdProvider } from '@radix-ui/react-id'
+import { ThemeProvider } from 'next-themes'
+import { globalStyles, dark } from 'utils/stitches.config'
 import type { AppProps } from 'next/app'
 
 const App = ({ Component, pageProps }: AppProps) => {
   globalStyles()
-  const Wrapper = styled('div', {
-    backgroundColor: '$background9',
-    color: '$text1',
-    minHeight: '100vh',
-    display: 'grid',
-    placeItems: 'center',
-    textAlign: 'center',
-  })
-  const isDarkMode = useMedia('(prefers-color-scheme: dark)')
 
   return (
-    <Wrapper className={isDarkMode ? dark : theme}>
-      <Component {...pageProps} />
-    </Wrapper>
+    <IdProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        value={{ light: 'light-theme', dark: dark.className }}
+        disableTransitionOnChange={true}
+      >
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </IdProvider>
   )
 }
 export default App
