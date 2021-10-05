@@ -90,6 +90,7 @@ export const globalStyles = globalCss({
   html: {
     fontFamily: theme.fonts.system,
     color: theme.colors.text1,
+    background: theme.colors.background9,
   },
   button: {
     cursor: 'pointer',
