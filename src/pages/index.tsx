@@ -2,6 +2,7 @@ import * as Switch from '@radix-ui/react-switch'
 import * as Label from '@radix-ui/react-label'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import Head from 'next/head'
+import { BackdropClock } from 'components/BackdropClock'
 import Logo from 'assets/logo.svg'
 import IconMusical from 'assets/icons/musical.svg'
 import IconMap from 'assets/icons/map.svg'
@@ -11,32 +12,17 @@ import IconPlane from 'assets/icons/plane.svg'
 import { styles } from 'styles/top'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { css } from 'utils/stitches.config'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>()
   const { resolvedTheme, setTheme } = useTheme()
+
   useEffect(() => {
     if (resolvedTheme) {
       setIsDarkMode(resolvedTheme === 'dark')
     }
   }, [resolvedTheme])
-
-  const backdropStyles = css({
-    position: 'absolute',
-    zIndex: -1,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '820px',
-    height: '820px',
-    overflow: 'hidden',
-    borderRadius: '820px',
-    background: isDarkMode
-      ? 'conic-gradient(from 235deg at 50% 50%, rgb(14, 18, 14) 0deg, rgb(32, 28, 15) 180deg, rgb(12, 59, 55) 360deg)'
-      : 'conic-gradient(from 235deg at 50% 50%, rgb(253, 253, 251) 0deg, rgb(255, 249, 241) 50deg, rgb(222, 228, 223) 360deg)',
-  })
 
   return (
     <div>
@@ -91,7 +77,7 @@ const Home: NextPage = () => {
             <dd>contact@emitgnos.com</dd>
           </div>
         </dl>
-        <div className={backdropStyles()} />
+        <BackdropClock />
       </main>
 
       <footer className={styles.footer()}>
