@@ -2,7 +2,7 @@ import * as Switch from '@radix-ui/react-switch'
 import * as Label from '@radix-ui/react-label'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import Head from 'next/head'
-import { BackdropClock } from 'components/BackdropClock'
+// import { BackdropClock } from 'components/BackdropClock'
 import Logo from 'assets/logo.svg'
 import IconMusical from 'assets/icons/musical.svg'
 import IconMap from 'assets/icons/map.svg'
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           content="https://emitgnos.com/ogimage.png"
         />
       </Head>
-      <BackdropClock />
+      {/* <BackdropClock /> */}
       <main className={styles.main()}>
         <h1 className={styles.logo()}>
           <Logo title="Emitgnos Inc." />

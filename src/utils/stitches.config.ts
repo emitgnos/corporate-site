@@ -1,4 +1,4 @@
-import { createStitches, globalCss } from '@stitches/react'
+import { createStitches } from '@stitches/react'
 
 const rem = (px: number) => {
   return `${px / 16}rem`
@@ -85,31 +85,5 @@ export const dark = createTheme('dark-theme', {
     primary4: '#09C882',
     primary5: '#0B895D',
     border: 'rgba(255,255,255,0.11)',
-  },
-})
-
-export const globalStyles = globalCss({
-  '*': {
-    margin: 0,
-    padding: 0,
-    boxSizing: 'border-box',
-    '&::before, &::after': {
-      boxSizing: 'border-box',
-    },
-  },
-  html: {
-    overflowX: 'hidden',
-  },
-  body: {
-    fontFamily: theme.fonts.system,
-    color: theme.colors.text1,
-    background: theme.colors.background9,
-    fontSize: rem(14),
-    letterSpacing: '0.068em',
-    lineHeight: '136%',
-    fontWeight: 300,
-  },
-  button: {
-    cursor: 'pointer',
   },
 })
