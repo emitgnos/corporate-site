@@ -98,16 +98,16 @@ export const globalStyles = globalCss({
     },
   },
   html: {
+    overflowX: 'hidden',
+  },
+  body: {
     fontFamily: theme.fonts.system,
     color: theme.colors.text1,
     background: theme.colors.background9,
-  },
-  body: {
     fontSize: rem(14),
     letterSpacing: '0.068em',
     lineHeight: '136%',
     fontWeight: 300,
-    background: theme.colors.background9,
   },
   button: {
     cursor: 'pointer',
