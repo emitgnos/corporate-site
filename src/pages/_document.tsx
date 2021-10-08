@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { getCssText } from 'utils/stitches.config'
 
 class AppDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="ja">
         <Head>

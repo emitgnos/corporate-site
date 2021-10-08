@@ -3,7 +3,7 @@ import { ThemeProvider } from 'next-themes'
 import { globalStyles, dark } from 'utils/stitches.config'
 import type { AppProps } from 'next/app'
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   globalStyles()
 
   return (
