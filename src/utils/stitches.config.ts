@@ -30,6 +30,9 @@ export const { styled, css, theme, createTheme, getCssText } = createStitches({
       primary5: '#09C882',
       border: 'rgba(0,0,0,0.08)',
     },
+    transitions: {
+      easeInOut: 'cubic-bezier(0.45, 0.1, 0.29, 1)',
+    },
   },
   media: {
     sm: '(min-width: 600px)',
@@ -38,21 +41,28 @@ export const { styled, css, theme, createTheme, getCssText } = createStitches({
     xl: '(min-width: 1920px)',
   },
   utils: {
-    typography: (variant: 'body2' | 'headline5') => {
+    typography: (variant: 'body2' | 'headline5' | 'caption') => {
       switch (variant) {
         case 'headline5':
           return {
             fontSize: rem(21),
             letterSpacing: '0em',
             lineHeight: '150%',
-            fontWeight: 700,
+            fontWeight: 600,
           }
         case 'body2':
           return {
             fontSize: rem(14),
             letterSpacing: '0.068em',
             lineHeight: '136%',
-            fontWeight: 400,
+            fontWeight: 300,
+          }
+        case 'caption':
+          return {
+            fontSize: rem(12),
+            letterSpacing: '0.068em',
+            lineHeight: '136%',
+            fontWeight: 300,
           }
         default:
           return {}
@@ -91,6 +101,12 @@ export const globalStyles = globalCss({
     fontFamily: theme.fonts.system,
     color: theme.colors.text1,
     background: theme.colors.background9,
+  },
+  body: {
+    fontSize: rem(14),
+    letterSpacing: '0.068em',
+    lineHeight: '136%',
+    fontWeight: 300,
   },
   button: {
     cursor: 'pointer',
