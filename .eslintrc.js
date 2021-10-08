@@ -5,8 +5,7 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard',
-    'plugin:@typescript-eslint/recommended',
+    'eslint:recommended',
     'next/core-web-vitals',
     'prettier',
   ],
