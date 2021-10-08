@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   const siteUrl = 'https://emitgnos.com'
 
   return (
-    <div>
+    <div className={styles.wrapper()}>
       <Head>
         <title>{metaTitle}</title>
         <meta name="title" content={metaTitle} />
@@ -44,8 +44,8 @@ const Home: NextPage = () => {
           content="https://emitgnos.com/ogimage.png"
         />
       </Head>
-
-      <main className={styles.mainWrapper()}>
+      <BackdropClock />
+      <main className={styles.main()}>
         <h1 className={styles.logo()}>
           <Logo title="Emitgnos Inc." />
         </h1>
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             </dt>
             <dd>
               <p>〒940-0062</p>
-              <p>新潟県長岡市大手通2丁目2番地6 ながおか市民センターB1F</p>
+              <p>新潟県長岡市大手通2丁目2番地6</p>
             </dd>
           </div>
           <div>
@@ -92,7 +92,6 @@ const Home: NextPage = () => {
             <dd>contact@emitgnos.com</dd>
           </div>
         </dl>
-        <BackdropClock />
       </main>
 
       <footer className={styles.footer()}>

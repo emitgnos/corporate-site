@@ -1,21 +1,30 @@
 import { css } from 'utils/stitches.config'
 
 export const styles = {
-  mainWrapper: css({
-    maxWidth: '560px',
+  wrapper: css({
+    width: '100%',
     height: '100vh',
-    margin: '40px auto',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    margin: '0 auto',
+    display: 'grid',
+    placeItems: 'center',
+  }),
+  main: css({
+    maxWidth: '560px',
+    padding: '24px',
+    position: 'relative',
+    zIndex: 1,
   }),
   logo: css({
-    width: '285px',
+    width: '238px',
     display: 'flex',
-    marginTop: '200px',
-    marginBottom: '24px',
+    marginBottom: '20px',
     '> svg': {
       width: '100%',
       height: 'auto',
+    },
+    '@sm': {
+      width: '285px',
+      marginBottom: '24px',
     },
   }),
   catchCopy: css({
@@ -23,22 +32,39 @@ export const styles = {
     fontStyle: 'normal',
     color: '$text4',
     display: 'block',
-    marginBottom: '80px',
+    marginBottom: '56px',
+    '@sm': {
+      marginBottom: '80px',
+    },
   }),
   contents: css({
     display: 'flex',
     flexDirection: 'column',
-    gap: '40px',
+    gap: '32px',
     '> div': {
       display: 'flex',
       alignItems: 'flex-start',
+      flexDirection: 'column',
+      gap: '12px',
       '> dt': {
         display: 'flex',
         alignItems: 'center',
-        width: '148px',
         '> svg': {
-          marginRight: '16px',
+          marginRight: '12px',
           color: '$primary4',
+        },
+      },
+    },
+    '@sm': {
+      gap: '40px',
+      '> div': {
+        flexDirection: 'row',
+        gap: 0,
+        '> dt': {
+          width: '148px',
+          '> svg': {
+            marginRight: '16px',
+          },
         },
       },
     },

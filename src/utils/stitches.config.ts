@@ -54,14 +54,14 @@ export const { styled, css, theme, createTheme, getCssText } = createStitches({
           return {
             fontSize: rem(14),
             letterSpacing: '0.068em',
-            lineHeight: '136%',
+            lineHeight: '132%',
             fontWeight: 300,
           }
         case 'caption':
           return {
             fontSize: rem(12),
             letterSpacing: '0.068em',
-            lineHeight: '136%',
+            lineHeight: '132%',
             fontWeight: 300,
           }
         default:
@@ -107,6 +107,7 @@ export const globalStyles = globalCss({
     letterSpacing: '0.068em',
     lineHeight: '136%',
     fontWeight: 300,
+    background: theme.colors.background9,
   },
   button: {
     cursor: 'pointer',

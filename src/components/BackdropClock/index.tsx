@@ -29,15 +29,14 @@ export const BackdropClock: React.VFC = () => {
   const calcMinuteDeg = (nowMinute: number) => nowMinute * (365 / 3600) + 365
 
   const backdropStyles = css({
-    position: 'absolute',
-    zIndex: -1,
+    position: 'fixed',
     top: '50%',
     left: '50%',
     transform: `translate(-50%, -50%) rotate(${
       nowMinutesOfSecond ? calcMinuteDeg(nowMinutesOfSecond) : 0
     }deg)`,
-    width: '820px',
-    height: '820px',
+    width: '720px',
+    height: '720px',
     overflow: 'hidden',
     borderRadius: '820px',
     transition: '1s ease',
@@ -47,6 +46,10 @@ export const BackdropClock: React.VFC = () => {
     opacity: 0,
     '&.-is-visible': {
       opacity: 1,
+    },
+    '@sm': {
+      width: '820px',
+      height: '820px',
     },
   })
 
