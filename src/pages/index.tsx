@@ -8,6 +8,7 @@ import IconMap from 'assets/icons/map.svg'
 import IconPen from 'assets/icons/pen.svg'
 import IconPaw from 'assets/icons/paw.svg'
 import IconPlane from 'assets/icons/plane.svg'
+import { styles } from 'styles/top'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { css } from 'utils/stitches.config'
@@ -22,95 +23,20 @@ const Home: NextPage = () => {
     }
   }, [resolvedTheme])
 
-  const styles = {
-    mainWrapper: css({
-      maxWidth: '560px',
-      height: '100vh',
-      margin: '40px auto',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-    }),
-    logo: css({
-      width: '285px',
-      display: 'flex',
-      marginTop: '200px',
-      marginBottom: '24px',
-      '> svg': {
-        width: '100%',
-        height: 'auto',
-      },
-    }),
-    catchCopy: css({
-      typography: 'caption',
-      fontStyle: 'normal',
-      color: '$text4',
-      display: 'block',
-      marginBottom: '80px',
-    }),
-    contents: css({
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '40px',
-      '> div': {
-        display: 'flex',
-        alignItems: 'flex-start',
-        '> dt': {
-          display: 'flex',
-          alignItems: 'center',
-          width: '148px',
-          '> svg': {
-            marginRight: '16px',
-            color: '$primary4',
-          },
-        },
-      },
-    }),
-    footer: css({
-      position: 'fixed',
-      bottom: '16px',
-      right: '32px',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-end',
-    }),
-    switchRoot: css({
-      border: 'none',
-      width: '48px',
-      height: '24px',
-      marginBottom: '16px',
-      backgroundColor: '$background1',
-      borderRadius: '24px',
-      position: 'relative',
-    }),
-    switchThumb: css({
-      display: 'block',
-      width: '22px',
-      height: '22px',
-      backgroundColor: '#09C882',
-      borderRadius: '24px',
-      transition: 'transform 0.17s ease',
-      transform: 'translateX(1px)',
-      '&[data-state="checked"]': { transform: 'translateX(25px)' },
-    }),
-    copyright: css({
-      typography: 'caption',
-      color: '$text4',
-    }),
-    backdrop: css({
-      position: 'absolute',
-      zIndex: -1,
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: '820px',
-      height: '820px',
-      overflow: 'hidden',
-      borderRadius: '820px',
-      background: isDarkMode
-        ? 'conic-gradient(from 235deg at 50% 50%, rgb(14, 18, 14) 0deg, rgb(32, 28, 15) 180deg, rgb(12, 59, 55) 360deg)'
-        : 'conic-gradient(from 235deg at 50% 50%, rgb(253, 253, 251) 0deg, rgb(255, 249, 241) 50deg, rgb(222, 228, 223) 360deg)',
-    }),
-  }
+  const backdropStyles = css({
+    position: 'absolute',
+    zIndex: -1,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '820px',
+    height: '820px',
+    overflow: 'hidden',
+    borderRadius: '820px',
+    background: isDarkMode
+      ? 'conic-gradient(from 235deg at 50% 50%, rgb(14, 18, 14) 0deg, rgb(32, 28, 15) 180deg, rgb(12, 59, 55) 360deg)'
+      : 'conic-gradient(from 235deg at 50% 50%, rgb(253, 253, 251) 0deg, rgb(255, 249, 241) 50deg, rgb(222, 228, 223) 360deg)',
+  })
 
   return (
     <div>
@@ -165,7 +91,7 @@ const Home: NextPage = () => {
             <dd>contact@emitgnos.com</dd>
           </div>
         </dl>
-        <div className={styles.backdrop()} />
+        <div className={backdropStyles()} />
       </main>
 
       <footer className={styles.footer()}>
