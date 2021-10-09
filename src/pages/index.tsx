@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           <Logo title="Emitgnos Inc." />
         </h1>
         <em className={styles.catchCopy()}>
-          だれかの時間を増やすような / Like adding to someone&apos;s time
+          Like allow you to manipulate the flow of time…
         </em>
         <dl className={styles.contents()}>
           <div>

@@ -26,7 +26,8 @@ export const BackdropClock: React.VFC = () => {
     })
   }, [setNowMinutesOfSecond, now])
 
-  const calcMinuteDeg = (nowMinute: number) => nowMinute * (365 / 3600) + 365
+  const calcMinuteDeg = (nowMinute: number) => nowMinute * (360 / 3600) + 360
+  console.log(nowMinutesOfSecond)
 
   const backdropStyles = css({
     position: 'fixed',

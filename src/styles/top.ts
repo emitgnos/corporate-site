@@ -71,6 +71,7 @@ export const styles = {
   }),
   footer: css({
     position: 'fixed',
+    zIndex: 2,
     bottom: '16px',
     right: '32px',
     display: 'flex',
