@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from 'utils/stitches.config'
+import { getCssText } from 'configs/stitches'
 
 class AppDocument extends Document {
   render(): JSX.Element {

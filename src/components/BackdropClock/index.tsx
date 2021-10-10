@@ -1,8 +1,8 @@
 import classnames from 'classnames'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { css } from 'utils/stitches.config'
-import { dayjs } from 'utils/dayjs'
+import { css } from 'configs/stitches'
+import { dayjs } from 'configs/dayjs'
 
 export const BackdropClock: React.VFC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>()
@@ -27,7 +27,6 @@ export const BackdropClock: React.VFC = () => {
   }, [setNowMinutesOfSecond, now])
 
   const calcMinuteDeg = (nowMinute: number) => nowMinute * (360 / 3600) + 360
-  console.log(nowMinutesOfSecond)
 
   const backdropStyles = css({
     position: 'fixed',

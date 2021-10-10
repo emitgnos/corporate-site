@@ -4,7 +4,7 @@ const rem = (px: number) => {
   return `${px / 16}rem`
 }
 
-export const { styled, css, theme, createTheme, getCssText } = createStitches({
+const stitches = createStitches({
   theme: {
     fonts: {
       system: `Hiragino Sans, Hiragino Kaku Gothic ProN, Helvetica Neue, Arial,
@@ -71,7 +71,7 @@ export const { styled, css, theme, createTheme, getCssText } = createStitches({
   },
 })
 
-export const dark = createTheme('dark-theme', {
+export const dark = stitches.createTheme('dark-theme', {
   colors: {
     text1: '#F9FAFA',
     text4: '#818D89',
@@ -87,3 +87,31 @@ export const dark = createTheme('dark-theme', {
     border: 'rgba(255,255,255,0.11)',
   },
 })
+
+export const globalStyles = stitches.globalCss({
+  '*': {
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+    '&::before, &::after': {
+      boxSizing: 'border-box',
+    },
+  },
+  html: {
+    overflowX: 'hidden',
+  },
+  body: {
+    fontFamily: '$system',
+    color: '$text1',
+    background: '$background9',
+    fontSize: `${14 / 16}rem`,
+    letterSpacing: '0.068em',
+    lineHeight: '136%',
+    fontWeight: 300,
+  },
+  button: {
+    cursor: 'pointer',
+  },
+})
+
+export const { styled, css, theme, getCssText } = stitches

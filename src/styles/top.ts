@@ -1,4 +1,4 @@
-import { css } from 'utils/stitches.config'
+import { css } from 'configs/stitches'
 
 export const styles = {
   wrapper: css({
