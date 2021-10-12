@@ -78,7 +78,7 @@ export const dark = stitches.createTheme('dark-theme', {
     text6: '#61756D',
     text10: '#132F24',
     background1: '#FFFFFF',
-    background8: 'transparent',
+    background8: '#25302E',
     background9: '#0D1614',
     background10: '#000000',
     primary3: 'transparent',
@@ -106,7 +106,7 @@ export const globalStyles = stitches.globalCss({
     background: '$background9',
     fontSize: `${14 / 16}rem`,
     letterSpacing: '0.068em',
-    lineHeight: '136%',
+    lineHeight: '132%',
     fontWeight: 300,
   },
   button: {

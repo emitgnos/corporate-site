@@ -2,6 +2,8 @@ import * as Switch from '@radix-ui/react-switch'
 import * as Label from '@radix-ui/react-label'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { BackdropClock } from 'components/BackdropClock'
@@ -31,6 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 const Home: NextPage = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>()
   const { resolvedTheme, setTheme } = useTheme()
+  const { locale } = useRouter()
   const { t } = useTranslation('common')
 
   useEffect(() => {
@@ -125,6 +128,11 @@ const Home: NextPage = () => {
         >
           <Switch.Thumb className={styles.switchThumb()} />
         </Switch.Root>
+        <Link href="/" locale={locale === 'ja' ? 'en' : 'ja'}>
+          <a className={styles.translate()}>
+            {locale === 'ja' ? 'English' : '日本語'}
+          </a>
+        </Link>
         <small className={styles.copyright()} translate="no">
           © 2021– Emitgnos Inc.
         </small>

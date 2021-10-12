@@ -10,9 +10,12 @@ export const styles = {
   }),
   main: css({
     maxWidth: '560px',
-    padding: '24px',
+    padding: '24px 24px 120px 24px',
     position: 'relative',
     zIndex: 1,
+    '@md': {
+      padding: '24px',
+    },
   }),
   logo: css({
     width: '238px',
@@ -82,7 +85,7 @@ export const styles = {
     border: 'none',
     width: '48px',
     height: '24px',
-    marginBottom: '16px',
+    marginBottom: '12px',
     backgroundColor: '$background1',
     borderRadius: '24px',
     position: 'relative',
@@ -96,6 +99,15 @@ export const styles = {
     transition: 'transform 0.17s ease',
     transform: 'translateX(1px)',
     '&[data-state="checked"]': { transform: 'translateX(25px)' },
+  }),
+  translate: css({
+    color: '$primary4',
+    background: '$background8',
+    textDecoration: 'none',
+    padding: '8px 16px',
+    marginBottom: '12px',
+    borderRadius: '24px',
+    display: 'flex',
   }),
   copyright: css({
     typography: 'caption',

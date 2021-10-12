@@ -21,9 +21,15 @@ export const BackdropClock: React.VFC = () => {
   }
 
   useEffect(() => {
+    let isMounted = true
     sleep().then(() => {
-      setNowMinutesOfSecond(now.minute() * 60 + now.second())
+      if (isMounted) {
+        setNowMinutesOfSecond(now.minute() * 60 + now.second())
+      }
     })
+    return () => {
+      isMounted = false
+    }
   }, [setNowMinutesOfSecond, now])
 
   const calcMinuteDeg = (nowMinute: number) => nowMinute * (360 / 3600) + 360
