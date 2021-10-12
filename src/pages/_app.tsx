@@ -1,5 +1,6 @@
 import { IdProvider } from '@radix-ui/react-id'
 import { ThemeProvider } from 'next-themes'
+import { appWithTranslation } from 'next-i18next'
 import { dark, globalStyles } from 'configs/stitches'
 import type { AppProps } from 'next/app'
 
@@ -19,4 +20,4 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     </IdProvider>
   )
 }
-export default App
+export default appWithTranslation(App)

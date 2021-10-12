@@ -1,0 +1,25 @@
+{
+  "catchCopy": "Like allow you to manipulate the flow of time…",
+  "postalCode": {
+    "value": "〒940-0062"
+  },
+  "companyName": {
+    "label": "社名",
+    "value": "株式会社Emitgnos（エミットグノス）"
+  },
+  "address": {
+    "label": "所在地",
+    "value": "新潟県長岡市大手通2丁目2番地6"
+  },
+  "business": {
+    "label": "事業内容",
+    "value": "Webアプリケーション等のデザインと開発"
+  },
+  "president": {
+    "label": "代表取締役",
+    "value": "小村 奈央"
+  },
+  "contact": {
+    "label": "お問い合わせ"
+  }
+}

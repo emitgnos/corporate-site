@@ -4,7 +4,7 @@ import { getCssText } from 'configs/stitches'
 class AppDocument extends Document {
   render(): JSX.Element {
     return (
-      <Html lang="ja">
+      <Html>
         <Head>
           <style
             id="stitches"

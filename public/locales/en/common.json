@@ -1,0 +1,25 @@
+{
+  "catchCopy": "Like allow you to manipulate the flow of time…",
+  "postalCode": {
+    "value": "940-0062 Japan"
+  },
+  "companyName": {
+    "label": "Company Name",
+    "value": "Emitgnos Inc."
+  },
+  "address": {
+    "label": "Address",
+    "value": "2-2-6 Otedori, Nagaoka-shi, Niigata-ken"
+  },
+  "business": {
+    "label": "Business",
+    "value": "Design and development of web applications, etc."
+  },
+  "president": {
+    "label": "CEO and Founder",
+    "value": "Nao Komura"
+  },
+  "contact": {
+    "label": "Contact"
+  }
+}

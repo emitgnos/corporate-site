@@ -2,6 +2,8 @@ import * as Switch from '@radix-ui/react-switch'
 import * as Label from '@radix-ui/react-label'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { BackdropClock } from 'components/BackdropClock'
 import Logo from 'assets/logo.svg'
 import IconMusical from 'assets/icons/musical.svg'
@@ -12,11 +14,24 @@ import IconPlane from 'assets/icons/plane.svg'
 import { styles } from 'styles/top'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  if (!locale)
+    return {
+      notFound: true,
+    }
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
 
 const Home: NextPage = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>()
   const { resolvedTheme, setTheme } = useTheme()
+  const { t } = useTranslation('common')
 
   useEffect(() => {
     if (resolvedTheme) {
@@ -49,45 +64,45 @@ const Home: NextPage = () => {
         <h1 className={styles.logo()}>
           <Logo title="Emitgnos Inc." />
         </h1>
-        <em className={styles.catchCopy()}>
-          Like allow you to manipulate the flow of time…
+        <em className={styles.catchCopy()} translate="no">
+          {t('catchCopy')}
         </em>
         <dl className={styles.contents()}>
           <div>
             <dt>
               <IconMusical title="" />
-              社名
+              {t('companyName.label')}
             </dt>
-            <dd>株式会社Emitgnos（エミットグノス）</dd>
+            <dd>{t('companyName.value')}</dd>
           </div>
           <div>
             <dt>
               <IconMap title="" />
-              所在地
+              {t('address.label')}
             </dt>
             <dd>
-              <p>〒940-0062</p>
-              <p>新潟県長岡市大手通2丁目2番地6</p>
+              <p>{t('postalCode.value')}</p>
+              <p>{t('address.value')}</p>
             </dd>
           </div>
           <div>
             <dt>
               <IconPen title="" />
-              事業内容
+              {t('business.label')}
             </dt>
-            <dd>Webアプリケーション等のデザインと開発</dd>
+            <dd>{t('business.value')}</dd>
           </div>
           <div>
             <dt>
               <IconPaw title="" />
-              代表取締役
+              {t('president.label')}
             </dt>
-            <dd>小村 奈央</dd>
+            <dd>{t('president.value')}</dd>
           </div>
           <div>
             <dt>
               <IconPlane title="" />
-              お問い合わせ
+              {t('contact.label')}
             </dt>
             <dd>contact@emitgnos.com</dd>
           </div>
@@ -110,7 +125,9 @@ const Home: NextPage = () => {
         >
           <Switch.Thumb className={styles.switchThumb()} />
         </Switch.Root>
-        <small className={styles.copyright()}>© 2021– Emitgnos Inc.</small>
+        <small className={styles.copyright()} translate="no">
+          © 2021– Emitgnos Inc.
+        </small>
       </footer>
     </div>
   )
