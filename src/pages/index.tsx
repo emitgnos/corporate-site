@@ -133,9 +133,10 @@ const Home: NextPage = () => {
             {locale === 'ja' ? 'English' : '日本語'}
           </a>
         </Link>
-        <small className={styles.copyright()} translate="no">
-          © 2021– Emitgnos Inc.
-        </small>
+        <footer className={styles.legal()}>
+          <Link href="/financial-statement">FS</Link>
+          <small translate="no">© 2021– Emitgnos Inc.</small>
+        </footer>
       </footer>
     </div>
   )

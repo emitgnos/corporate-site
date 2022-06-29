@@ -109,8 +109,12 @@ export const styles = {
     borderRadius: '24px',
     display: 'flex',
   }),
-  copyright: css({
+  legal: css({
     typography: 'caption',
     color: '$text4',
+    '> a': {
+      marginRight: '12px',
+      color: '$primary4',
+    },
   }),
 }
